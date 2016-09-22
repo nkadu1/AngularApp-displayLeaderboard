@@ -19,7 +19,7 @@ module.exports = function (config) {
             'index.html',
             'app/app.js',
             'node_modules/angular-mocks/angular-mocks.js',
-
+            'app/templates/list.directive.tmpl.html',
             'app/controllers/list.controller.js',
             'app/services/list.service.js',
             'app/directives/list.directive.js',

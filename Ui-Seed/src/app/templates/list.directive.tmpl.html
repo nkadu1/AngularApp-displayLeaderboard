@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Camper Name</th>
+
+        <th ng-click="vm.sortFn('recent')">Points in Past 30 Days</th>
+        <th ng-click="vm.sortFn('alltime')">All time Points</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr ng-repeat="user in listItems">
+        <td>{{$index+1}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.recent}}</td>
+        <td>{{user.alltime}}</td>
+    </tr>
+    </tbody>
+</table>

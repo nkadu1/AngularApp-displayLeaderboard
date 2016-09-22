@@ -1,8 +1,8 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('app')
-        .service('listService', ['$http','$q', function($http) {
+        .service('listService', ['$http', '$q', function ($http) {
 
             var vs = this;
             vs.getData = getData;
@@ -16,12 +16,16 @@
                 return vs.data;
             }
 
-            var sort_by = function(sortBy, reverse) {
-                var key = parseInt ? function(x) { return parseInt(x[sortBy])} :
-                    function(x) { return x[sortBy]};
+            var sort_by = function (sortBy, reverse) {
+                var key = parseInt ? function (x) {
+                    return parseInt(x[sortBy])
+                } :
+                    function (x) {
+                        return x[sortBy]
+                    };
 
                 reverse = !reverse ? 1 : -1;
-                return function(a, b) {
+                return function (a, b) {
                     return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
                 }
             }

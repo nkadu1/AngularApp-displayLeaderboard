@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     angular
         .module('app')
@@ -6,20 +6,22 @@
 
     function main() {
         var directive = {
-            replace: true,
-            restrict: 'EA',
             scope: {
-                listItem: '=main',
-                index: '@'
+                listItems: '=items',
             },
-            template: "<tr>" +
-            " <td>{{index}}</td>" +
-            "<td>{{listItem.username}}</td>" +
-            "<td>{{listItem.recent}}</td>" +
-                "<td>{{listItem.alltime}}</td>" +
-            "</tr>"
+            templateUrl: './app/templates/list.directive.tmpl.html',
+            controller: dirController,
+            controllerAs: 'vm'
         }
+
+        function dirController(listService) {
+            var vm = this;
+            vm.sortFn = function (sortBy) {
+                console.log('Here in controller sort ' + sortBy)
+                vm.data = listService.sortFn(sortBy)
+            }
+        }
+
         return directive
     }
-
 })()

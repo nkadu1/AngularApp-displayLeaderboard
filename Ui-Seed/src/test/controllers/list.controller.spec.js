@@ -34,9 +34,6 @@ describe('Tests for list Controller', function () {
         })
         var vm = $controller('listController', {$scope: $scope});
         $rootScope.$apply()
-        console.log('$scope.data == ' + vm.data.username)
-        console.log('$scope.data Length == ' + vm.data.length)
-        console.log('$scope.data[0] Length == ' + vm.data[0].username)
         expect(vm.data[0].username).toBe(listdata[0].username)
     })
 
