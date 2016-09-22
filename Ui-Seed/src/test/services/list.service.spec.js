@@ -52,7 +52,7 @@ describe('list Service', function () {
     }))
 
 
-    it("calls the returns sorted data function", function () {
+    it("should sort the data correctly", function () {
         service.sortFn('recent');
         spyOn(service, "sortFn").and.callFake(function () {
             return data;
@@ -62,11 +62,11 @@ describe('list Service', function () {
     });
 
 
-    it("tracks all the arguments of its calls", function () {
-        spyOn(service, "sortFn")
-        service.sortFn('recent');
-        expect(service.sortFn).toHaveBeenCalledWith('recent');
-    });
+    // it("tracks all the arguments of its calls", function () {
+    //     spyOn(service, "sortFn")
+    //     service.sortFn('recent');
+    //     expect(service.sortFn).toHaveBeenCalledWith('recent');
+    // });
 
 
 })
